@@ -1,5 +1,0 @@
-mountpoints:
-  /:
-    url: "https://author-p9652-e115365.adobeaemcloud.com/bin/franklin.delivery/viveksr2/eds-learn-xwalk/main"
-    type: "markup"
-    suffix: ".html"
