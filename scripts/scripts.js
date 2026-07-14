@@ -120,6 +120,24 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
+  addBlockMetaTags(main);
+}
+
+function addBlockMetaTags(main) {
+  const blocks = main.querySelectorAll('[class*="block"]');
+  blocks.forEach((block) => {
+    const blockClasses = block.className.split(' ');
+    const blockName = blockClasses.find((c) => c.endsWith('block') && !c.startsWith('block'));
+   
+    if (blockName) {
+      // Extract the block name (e.g., 'cards-block' -> 'cards')
+      const name = blockName.replace('-block', '');
+      const metaTag = document.createElement('meta');
+      metaTag.name = 'urn:aem:resource';
+      metaTag.content = `urn:aem:content:demo/${name}`;
+      block.appendChild(metaTag);
+    }
+  });
 }
 
 /**
