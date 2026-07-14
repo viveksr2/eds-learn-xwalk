@@ -134,7 +134,7 @@ function addBlockMetaTags(main) {
       const name = blockName.replace('-block', '');
       const metaTag = document.createElement('meta');
       metaTag.name = 'urn:aem:resource';
-      metaTag.content = `urn:aem:content:demo/${name}`;
+      metaTag.content = `urn:aem:content:eds-learn-xwalk/${name}`;
       block.appendChild(metaTag);
     }
   });
