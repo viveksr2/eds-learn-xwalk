@@ -1,4 +1,5 @@
 import {
+  buildBlock,
   loadHeader,
   loadFooter,
   decorateIcons,
